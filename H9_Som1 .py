@@ -32,4 +32,5 @@ def my_nth_root(x,n,tol):
 
 #Voorbeeld (Zelfde gegevens als van dat boek) 
 print (my_nth_root(2,2,1e-6))
+
     

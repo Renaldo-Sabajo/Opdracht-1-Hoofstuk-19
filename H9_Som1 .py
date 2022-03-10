@@ -23,6 +23,8 @@ def my_nth_root(x,n,tol):
     # y0 is een startwaarde, bijvoorbeeld
     y0 = 1.4
     n_r = y0 - (f(y0))/(f_prime(y0))
+    
+    # Concept: new_n_r = n_r - (f(n_r))/(f_prime(n_r)) --> zo iets moeten we maken in recurion vorm
 
     if abs(f(y0)) < tol:
         return y0

@@ -8,27 +8,27 @@ metric should be |f(y)|.
 ---------------------------------------------------------------------------------------------------
 import numpy as np
 
-# Definieer x, n, tol, f(x), en N
+# Definieer x>0, n>1, tol>0, f(x), en N
 # Definieer my_nth_root(x,n,tol)
-# x en n zijn gewoon variabelen die ingevuld moeten worden (constanten)
-# x maakt geen deel uit van de functie
+# x en n zijn vrije variabelen die ingevuld moeten worden (constanten)
 
 # Output is een estimation van de wortel van f(y)
-# Root of wortel van f(y) is y = r = x**(1/n)
+# Wortel van f(y) is r = x**(1/n)
 # Gebruikmakend van de Newton Raphson Method
 # Recusrsive Implementation
 
 def my_nth_root(x,n,tol):
     f = lambda y: (y**n) - x
     f_prime = lambda y: n * (y**(n-1))
-    r = x**(1/n) 
-    # y moeten we nog defieneren, y is een beginpunt 
-    y = 1.4
-    newton_raphson = y - (f(y))/(f_prime(y))
-    if abs(f(y)) < tol:
-        return y
+    # y0 is een startwaarde, bijvoorbeeld
+    y0 = 1.4
+    n_r = y0 - (f(y0))/(f_prime(y0))
+
+    if abs(f(y0)) < tol:
+        return y0
     else:
-        print('newton_raphson',newton_raphson)
+        return my_nth_root(x,n,tol)
+
 
 #Voorbeeld (Zelfde gegevens als van dat boek) 
 print (my_nth_root(2,2,1e-6))

@@ -32,7 +32,7 @@ def my_nth_root(x,n,tol):
     # Concept: new_n_r = n_r - (f(n_r))/(f_prime(n_r)) --> zo iets moeten we maken in recurion vorm
     # COncept: We moeten een subfunctie maken voor de recursie van de Newton Raphson formule
 
-    def new_n_r(y0):
+    def new_n_r(y0 = input("Kies een beginwaarde: y0 = ")):
         f = lambda y: (y**n) - x
         f_prime = lambda y: n * (y**(n-1))
         n_r = y0 - (f(y0))/(f_prime(y0))

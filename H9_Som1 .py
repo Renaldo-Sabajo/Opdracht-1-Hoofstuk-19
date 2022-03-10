@@ -36,7 +36,7 @@ def my_nth_root(x,n,tol):
     # COncept: We moeten een subfunctie maken voor de recursie van de Newton Raphson formule
     # De begin waarde opvragen van de gebruiker 
     
-    def new_n_r(y0 = input("Kies een beginwaarde: y0 = ")):
+    def new_n_r(y0):
         f = lambda y: (y**n) - x
         f_prime = lambda y: n * (y**(n-1))
         n_r = y0 - (f(y0))/(f_prime(y0))

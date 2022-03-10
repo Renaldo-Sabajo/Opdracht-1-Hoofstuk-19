@@ -63,7 +63,37 @@ for i in range(5):
     
 print ( '
     
- 
+___________________________________________________________________________________________________________________________________________________________________________
+ #Bisection Method: dit is maar een concept 
+def my_nth_root(x,n,tol):
+       f = lambda y: (y**n) - x
+       print("Kies de grenzen voor het interval [a,b]:")
+       def bisection(a,b):
+       # Middelpunt definieren van de interval 
+            a = float(input("a = "))
+            b = float(input("b = "))
+            m = (a+b)/2
+            f = lambda y: (y**n) - x
+            # Na gaan als er een wortel tussen de eindpunten a en b ligt 
+       if np.sign(f(a)) == np.sign(f(b)):
+            raise Exception("er zit geen wortel tussen de eindpunten a and b")
+        
+        # We stoppen de recursion indien de approximate error is < tolerance
+       if np.abs(f(m)) < tol:
+            return m
+        elif np.sign(f(a)) == np.sign(f(m)):
+            # Geval waar f(b) en f(m) tegengestelde tekens hebben dan kiezen we interval [m,b] 
+            # Maak een recursive call met a = m
+            return bisection(m, b)
+        elif np.sign(f(b)) == np.sign(f(m)):
+            # Geval waar f(a) en f(m) tegengestelde tekens hebben dan kiezen we interval [a,m]
+            # Maak een recursive call met b = m
+            return bisection(a, m)
+     
+# Zelfde voorbeeld als bij Newton Raphson Methode 
+r1 = my_nth_root(2,2,1e-6)
+print(r1)       
+
     
     
     

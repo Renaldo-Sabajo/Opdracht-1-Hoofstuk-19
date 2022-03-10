@@ -26,6 +26,8 @@ def my_nth_root(x,n,tol):
     n > 1
     x > 0
     tol > 0
+    r = x**(1/n)
+    return r
     
     # Concept: new_n_r = n_r - (f(n_r))/(f_prime(n_r)) --> zo iets moeten we maken in recurion vorm
     # COncept: We moeten een subfunctie maken voor de recursie van de Newton Raphson formule

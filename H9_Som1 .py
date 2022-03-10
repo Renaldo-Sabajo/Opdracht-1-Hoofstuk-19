@@ -40,10 +40,12 @@ def my_nth_root(x,n,tol):
             return y0
         else:
             return new_n_r(n_r)
-    d = new_n_r(n_r)
-    return d
+    r = new_n_r(n_r)
+    return r
+print("The root of te function is ", r)
+
     
 #Voorbeeld (Zelfde gegevens als van dat boek) 
-print (my_nth_root(2,2,1e-6))
+print ("the root of the function is r = ", my_nth_root(2,2,1e-6))
 
     

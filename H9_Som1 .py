@@ -23,7 +23,7 @@ def my_nth_root(x,n,tol):
     f = lambda y: (y**n) - x
     f_prime = lambda y: n * (y**(n-1))
     # y0 is een startwaarde, bijvoorbeeld
-    y0 = 1.5
+    y0 = float(input("Kies een beginwaarde: y0 = "))
     n_r = y0 - (f(y0))/(f_prime(y0))
     n > 1
     x > 0

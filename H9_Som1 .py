@@ -94,9 +94,52 @@ def my_nth_root(x,n,tol):
 r1 = my_nth_root(2,2,1e-6)
 print(r1)       
 
+# Ik kwam hierop, weet niet zeker als het correct is.
+    
+def my_nth_root(a,n,tol):
+    f = lambda y: (y**n) - a
+    n > 1
+    a > 0
+    tol > 0
+    
+    def midpoint(p, q):
+        m = (p + q)/2
+        if np.abs(f(m)) < tol:
+            return m
+        elif np.sign(f(p)) == np.sign(m):
+            return midpoint(m, q)
+        elif np.sign(f(q)) == np.sign(m):
+            return midpoint(p, m)
+        
+    return my_nth_root
+print ('de wortel bij a = 2, n = 2 en tol = 0.01 is', my_nth_root(2, 2, 0.01)
     
     
-    
-    
-    
+       
+#--------
+# Fixed point iteration
+
+#Algoritme:
+# maak een functie die a, n en tol neemt, noem my_nth_root
+# herschrijf f(y) in de vorm van y = ...
+# definieer de functie g(y)
+# definieer de functie dg/dy 
+# g(y) = y
+# Check als abs(dg/dy) < 1 dan een unieke fixed point
+# maak een andere functie in de huidige die de beginschatting opvraagt met y_past en de beginschatting, y0, als parameters , noem kies_waarde 
+# met deze beginwaarde wordt de fixed point, g(y) = y berekend
+# y_past is de variabele van de vorige iteratie, y  is die van de volgende
+# Er moet een elif statement komen, nog niet zeker hoe dat erbij moet 
+# g(y_past) = y
+# return y 
+
+
+
+# Regula Falsi Mehtode
+# 
+# maak een functie die a, n en tol neemt, noem my_nth_root
+# maak een andere functie in de huidige die de beginschatting opvraagt met p en q als argumenten , noem kies_waarden 
+# Bereken f(p) en f(q)
+# maak c_begin = q - (f(q) * (q - p))/ (f(q) - f(p))
+# 
     

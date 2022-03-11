@@ -28,7 +28,7 @@ def my_nth_root(x,n,tol):
     n > 1
     x > 0
     tol > 0
-    if tol < 0.0001: break
+    
     
     
     
@@ -51,17 +51,6 @@ def my_nth_root(x,n,tol):
 print ("the root of the function is r = ", my_nth_root(2,2,1e-6))
 
 
-# Hi Renaldo, ik heb dit erbij geplaatst. Er zijn ook wat andere aanpassingen. Hieronder kan je 
-# zien hoe de iteratie erbij kan. Nu dit samen zetten met wat je boven hebt.
-# De iteratie zal 5 keer uitgvoerd worden
-# noem de volgende y waarde y_next
-
-for i in range(5):
- y_next = y - (f / f_prime)
- if abs(y_next - y)> 0.0001: break
-    y = y_next 
-    
-print ( '
     
 ___________________________________________________________________________________________________________________________________________________________________________
  #Bisection Method: dit is maar een concept 
